@@ -34,8 +34,8 @@ app.get("/hotdeals", async(res,req) =>{
 //get specific hotdeals through the serach bar
 app.get("/hotdeals/:deal_name", async(res,req) =>{
     try {
-        const allDeals = await pool.query("SELECT * FROM HotDeal WHERE deal_name=$1",[deal_name]);
-        res.json(allDeals); 
+        const findDeals = await pool.query("SELECT * FROM HotDeal WHERE deal_name=$1",[deal_name]);
+        res.json(findDeals); 
     } catch (error) {
         console.log(error.message)
     }
