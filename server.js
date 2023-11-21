@@ -24,8 +24,8 @@ app.post("/hotdeals", async(res,req)=>{
 //get all hotdeals
 app.get("/hotdeals", async(res,req) =>{
     try {
-        const allDeals = await pool.query("SELECT * FROM HotDeal");
-        res.json(allDeals.rows[0]); 
+        const GetallDeals = await pool.query("SELECT * FROM HotDeal");
+        res.json(GetallDeals.rows[0]); 
     } catch (error) {
         console.log(error.message)
     }
