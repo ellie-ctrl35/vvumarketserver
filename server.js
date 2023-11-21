@@ -56,8 +56,8 @@ app.get("/products", async(res,req)=>{
 //get all products in ma bediako store
 app.get("/products", async(res,req)=>{
     try {
-        const bediako = await pool.query("SELECT  FROM PRODUCTS");
-        res.json(bediako);
+        const MAbediako = await pool.query("SELECT  FROM PRODUCTS");
+        res.json(MAbediako);
     } catch (error) {
         console.log(error.message)
     }
