@@ -45,8 +45,8 @@ app.get("/hotdeals/:deal_name", async(res,req) =>{
 //get all products in jj nortey store
 app.get("/products", async(res,req)=>{
     try {
-        const nortey = await pool.query("SELECT  FROM PRODUCTS");
-        res.json(nortey);
+        const JJnortey = await pool.query("SELECT  FROM PRODUCTS");
+        res.json(JJnortey);
     } catch (error) {
         console.log(error.message)
     }
