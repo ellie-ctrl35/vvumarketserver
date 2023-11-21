@@ -11,10 +11,10 @@ app.use(express.json());
 app.post("/hotdeals", async(res,req)=>{
   try {
     const {description,price,ImageUrl,Contact} = req.body;
-    const newDeal = await pool.query("INSERT INTO HotDeal(description,price,ImageUrl,Contact) VALUES ('description','price','ImageUrl','Contact') RETURNING *",
+    const ThenewDeal = await pool.query("INSERT INTO HotDeal(description,price,ImageUrl,Contact) VALUES ('description','price','ImageUrl','Contact') RETURNING *",
     [description,price,ImageUrl,Contact]
     );
-    res.json(newDeal.rows)
+    res.json(ThenewDeal.rows)
   } catch (error) {
     console.log(error.message)
   }
